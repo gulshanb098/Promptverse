@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Promptverse
 
-## Getting Started
+Promptverse is a **Next.js-based** web application that allows users to **create, share, and explore AI-generated prompts**. The application uses **NextAuth** for authentication, supporting **Google OAuth**.
 
-First, run the development server:
+---
+
+## ✨ Features
+
+- 🔑 **User Authentication**: Secure authentication using **Google OAuth** with **NextAuth**.
+- ✍️ **Prompt Creation**: Users can create and manage their **AI-generated prompts**.
+- 🏷️ **Tagging System**: Organize prompts with relevant tags.
+- 👤 **User Profiles**: View other users' profiles and their respective prompts.
+- ✏️ **Prompt Management**: Users can **edit** and **delete** only their own prompts.
+- 🔍 **Search Functionality**: Search prompts by **username, tag, or prompt content**.
+- 🎯 **Tag-Based Filtering**: Click on a tag to automatically filter prompts related to that tag.
+- 🗄️ **Database Integration**: **MongoDB** for storing user-generated prompts.
+- ⚡ **Next.js API Routes**: Backend powered by **Next.js API routes**.
+
+---
+
+## 🛠️ Tech Stack
+
+- 🎨 **Frontend**: Next.js (**TypeScript**)
+- 🖥️ **Backend**: Next.js API Routes
+- 🔐 **Authentication**: NextAuth.js (**Google OAuth**)
+- 🗃️ **Database**: MongoDB with Mongoose
+- 💅 **Styling**: Tailwind CSS
+
+---
+
+## 📦 Installation
+
+### ✅ Prerequisites
+
+Ensure you have the following installed:
+
+- ⚡ **Node.js** (v18+ recommended)
+- 🛢️ **MongoDB** (Local or Cloud)
+- 📦 **npm** (recommended)
+
+### 🛠️ Steps
+
+1️⃣ **Clone the repository:**
+
+```bash
+git clone https://github.com/gulshanb098/Promptverse.git
+cd Promptverse
+```
+
+2️⃣ **Install dependencies:**
+
+```bash
+npm install
+```
+
+3️⃣ **Create a `.env.local` file** in the root directory and add the following environment variables:
+
+```env
+NEXTAUTH_SECRET=your_secret_key
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_URL_INTERNAL=http://localhost:3000
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+MONGODB_URI=your_mongodb_connection_string
+```
+
+4️⃣ **Run the development server:**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🚀 The app will be available at `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📡 API Routes
 
-## Learn More
+### 🔐 Authentication
+- 📌 **GET** `/api/auth/[...nextauth]` - NextAuth authentication routes
 
-To learn more about Next.js, take a look at the following resources:
+### 📝 Prompts
+- 📌 **POST** `/api/prompt/new` - Create a new prompt
+- 📌 **GET** `/api/prompt` - Fetch all prompts
+- 📌 **GET** `/api/prompt/[id]` - Fetch a specific prompt
+- 📌 **DELETE** `/api/prompt/[id]` - Delete a prompt
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 👥 Users
+- 📌 **GET** `/api/users/[id]` - Fetch a user profile
+- 📌 **GET** `/api/users/[id]/posts` - Fetch all posts by a specific user
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🤝 Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+💡 Feel free to submit **issues** or **pull requests** to improve the project!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+![promptverse](public/assets/images/image.png)
+
+Made with ❤️ by **Gulshan**
