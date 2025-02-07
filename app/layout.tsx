@@ -7,6 +7,9 @@ import ProtectedRoute from "@/hoc/ProtectedRoute";
 export const metadata = {
   title: "Promptverse",
   description: "Discover & Share AI Prompts",
+  icons: {
+    icon: "/assets/images/logo.svg",
+  }  
 };
 
 interface Props {
