@@ -2,8 +2,8 @@ import Nav from "@/components/Nav";
 import Provider from "@/components/Provider";
 import "@/styles/globals.css";
 import { ReactNode } from "react";
-import { Session } from "next-auth";
 import ProtectedRoute from "@/hoc/ProtectedRoute";
+
 export const metadata = {
   title: "Promptverse",
   description: "Discover & Share AI Prompts",
@@ -11,14 +11,13 @@ export const metadata = {
 
 interface Props {
   children: ReactNode;
-  session: Session | null;
 }
 
-const RootLayout = ({ children, session }: Props) => {
+const RootLayout = ({ children }: Props) => {
   return (
     <html lang="en">
       <body>
-        <Provider session={session}>
+        <Provider>
           <ProtectedRoute>
             <div className="main">
               <div className="gradient"></div>
