@@ -3,6 +3,7 @@
 import PromptCard from "@/components/PromptCard";
 import { IUserProfile, IUserPrompt } from "@/utils/interfaces";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { use, useEffect, useState } from "react";
 
 interface Props {
@@ -10,6 +11,7 @@ interface Props {
 }
 
 const ProfilePage = ({ params }: Props) => {
+  const router = useRouter();
   const [profileData, setProfileData] = useState<IUserProfile | null>(null);
   const [userPrompts, setUserPrompts] = useState<IUserPrompt[]>([]);
 
@@ -22,7 +24,8 @@ const ProfilePage = ({ params }: Props) => {
         const data = await res.json();
         setProfileData(data);
       } catch (error) {
-        console.error("Error fetching profile:", error);
+        // console.error("Error fetching profile:", error);
+        router.replace("/");
       }
     };
 
@@ -36,7 +39,7 @@ const ProfilePage = ({ params }: Props) => {
         const data = await res.json();
         setUserPrompts(data);
       } catch (error) {
-        console.error("Error fetching user posts:", error);
+        // console.error("Error fetching user posts:", error);
       }
     };
 
