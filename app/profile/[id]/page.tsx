@@ -62,7 +62,7 @@ const ProfilePage = ({ params }: Props) => {
         <h2 className="mt-4 text-xl font-semibold text-gray-800">
           {profileData.username}
         </h2>
-        <p className="text-gray-500">{profileData.email}</p>
+        {/* <p className="text-gray-500">{profileData.email}</p> */}
       </div>
 
       {/* User Posts Section */}
